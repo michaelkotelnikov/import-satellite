@@ -56,4 +56,17 @@ Parameters
   - Default definition: the variable is defined at `group_vars/<dev|local-prod|customer-prod>/key.yml`.
   - **Note:** **Mandatory Variable that must be applied**
 
+- **Inventory**
+  - Description: The inventory is defined in the `./invenotry` file. The inventory is seperated into 3 groups - `dev|local-prod|customer-prod`, each server that is added into the inventory file should be under the correct group.
+  - Default value:
+  ```
+  [dev]
+server-a.ocp.lab ansible_user=root
+
+[local-prod]
+server-b.ocp.lab ansible_user=root
+
+[customer-prod]
+server-c.ocp.lab ansible_user=root
+  ```
 
