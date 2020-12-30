@@ -5,6 +5,17 @@ The role was created in order to import a mass scale hosts into RedHat Satellite
 
 An `Activation Key` is assigned to a host using a combination of it's `Lifecycle Environment` variable that is defined by the group that the host is a part of, and it's `OS Version` which is pulled using the `gather_facts` ansible module. The version of the operating system corresponds with the `Content View` in Red Hat Satellite.
 
+The `Lifecycle Environments` used in the role -
+- dev
+- local-prod
+- customer-prod
+
+The RHEL versions that the role supports -
+- 7.4
+- 7.6
+- 7.8
+- 7.9
+
 Prerequisites
 -------------
 
@@ -38,3 +49,11 @@ Parameters
   - Default value: katello-host-tools
   - Default definition: the variable is defined at `roles/import-satellite/defaults/main.yml`.
   - **Note:** **Do not change unless required**
+  
+- **Variables:** `rhel7.<4|6|8|9>-<dev|local-prod|customer-prod>`.
+  - Description: Multiple variable that define how an `Activation Key` should look like. Each value is a different `Activation Key`.
+  - Default value: **Not Consistent** Relys on the key value from Satellite.
+  - Default definition: the variable is defined at `group_vars/<dev|local-prod|customer-prod>/key.yml`.
+  - **Note:** **Mandatory Variable that must be applied**
+
+
