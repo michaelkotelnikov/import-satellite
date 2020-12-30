@@ -1,4 +1,4 @@
-key_7.8: "testvar"
-key_7.4: "testy"
-key_7.9: "tusty"
-key_7.6: "woohoo"
+rhel7.8-local-prod: "testvar"
+rhel7.4-local-prod: "testy"
+rhel7.6-local-prod: "tusty"
+rhel7.9-local-prod: "woohoo"
