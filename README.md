@@ -20,3 +20,21 @@ Parameters
   - Default value: http://10.35.97.198
   - Default definition: the variable is defined at `roles/import-satellite/defaults/main.yml` and can be overwritten to fit any other environment.
   - **Note:** **the environment can be modifies and changed**
+
+- **Variable:** `organization_id`.
+  - Description: the base organization ID in the Satellite server.
+  - Default value: Cool-Organization
+  - Default definition: the variable is defined at `roles/import-satellite/defaults/main.yml` and can be overwritten to fit any other environment.
+  - **Note:** **the environment can be modifies and changed**
+  
+- **Variable:** `satellite_tools_repository`.
+  - Description: the name of the Satellite Tools repository.
+  - Default value: rhel-7-server-satellite-tools-6.8-rpms
+  - Default definition: the variable is defined at `roles/import-satellite/defaults/main.yml`.
+  - **Note:** **Do not change unless required**
+  
+- **Variable:** `katello_package_name`.
+  - Description: the name of the Satellite Tools package.
+  - Default value: katello-host-tools
+  - Default definition: the variable is defined at `roles/import-satellite/defaults/main.yml`.
+  - **Note:** **Do not change unless required**
