@@ -70,3 +70,11 @@ server-b.ocp.lab ansible_user=root
 [customer-prod]
 server-c.ocp.lab ansible_user=root
 ```
+
+Running the Role
+----------------
+
+To run the role, invoke the playbook that is present in the repository.
+```
+ansible-playbook -i inventory import-servers
+```
