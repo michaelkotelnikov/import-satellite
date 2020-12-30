@@ -4,10 +4,18 @@
     name: "{{ satellite_url }}/pub/katello-ca-consumer-latest.noarch.rpm"
     state: present
 
-- name: "Print the version of the host"
-  debug:
-    msg: "{{ hostvars[inventory_hostname].ansible_distribution_version }}"
+- name: "Register the system with the relevant activation key"
+  redhat_subscription:
+    state: present
+    activationkey: "{{ vars['rhel' + hostvars[inventory_hostname].ansible_distribution_version + '-dev'] }}"
+    org_id: "{{ organization_id }}"
 
-- name: "Print Test var"
-  debug:
-    msg: "{{ vars['key_' + hostvars[inventory_hostname].ansible_distribution_version] }}"
+- name: "Set the release version of the RHEL server"
+  community.general.rhsm_release:
+    release: "{{ hostvars[inventory_hostname].ansible_distribution_version }}"
+
+- name: "Install the Satellite Tools package"
+  yum:
+    name: "{{ katello_package_name }}"
+    enablerepo: "{{ satellite_tools_repository }}"
+    state: present
