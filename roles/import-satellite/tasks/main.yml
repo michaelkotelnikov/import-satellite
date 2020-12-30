@@ -1,0 +1,13 @@
+---
+- name: "Install the Satellite certificate"
+  yum:
+    name: "{{ satellite_url }}/pub/katello-ca-consumer-latest.noarch.rpm"
+    state: present
+
+- name: "Print the version of the host"
+  debug:
+    msg: "{{ hostvars[inventory_hostname].ansible_distribution_version }}"
+
+- name: "Print Test var"
+  debug:
+    msg: "{{ vars['key_' + hostvars[inventory_hostname].ansible_distribution_version] }}"
