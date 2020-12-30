@@ -13,5 +13,9 @@ The role relies on a community based `ansible module`. Make sure to install it b
 ansible-galaxy collection install community.general
 ```
 
-Stracture
+Parameters
 ---------
+- **Variable:** `_rhv_vm`.
+  - Description: a dictionary of default values to combine with user dictionary
+  - Default value: all of the default vars
+  - **Note:** **don't change this var unnecessarily**
