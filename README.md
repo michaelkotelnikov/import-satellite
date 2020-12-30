@@ -15,7 +15,8 @@ ansible-galaxy collection install community.general
 
 Parameters
 ---------
-- **Variable:** `_rhv_vm`.
-  - Description: a dictionary of default values to combine with user dictionary
-  - Default value: all of the default vars
-  - **Note:** **don't change this var unnecessarily**
+- **Variable:** `satellite_url`.
+  - Description: the base url of the Satellite server.
+  - Default value: http://10.35.97.198
+  - Default definition: the variable is defined at `roles/import-satellite/defaults/main.yml` and can be overwritten to fit any other environment.
+  - **Note:** **the environment can be modifies and changed**
