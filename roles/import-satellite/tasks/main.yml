@@ -7,7 +7,7 @@
 - name: "Register the system with the relevant activation key"
   redhat_subscription:
     state: present
-    activationkey: "{{ vars['rhel' + hostvars[inventory_hostname].ansible_distribution_version + '-dev'] }}"
+    activationkey: "{{ vars['rhel' + hostvars[inventory_hostname].ansible_distribution_version + '-' + env] }}"
     org_id: "{{ organization_id }}"
 
 - name: "Set the release version of the RHEL server"

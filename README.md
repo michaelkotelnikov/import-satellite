@@ -56,6 +56,12 @@ Parameters
   - Default definition: the variable is defined at `group_vars/<dev|local-prod|customer-prod>/key.yml`.
   - **Note:** **Mandatory Variable that must be applied**
 
+- **Variable:** `env`.
+ - Description: the name of the environment to which the server should be registered to.
+ - Default value: <none> - parameter is mandatory.
+ - Default definition: the variable is defined per ansible group at `group_vars/<dev|local-prod|customer-prod>/key.yml`.
+ - **Note:** **Mandatory Variable that must be applied**
+
 Inventory
 ---------
 
